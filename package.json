@@ -1,7 +1,7 @@
 {
-  "name": "Liga-A-start-template",
+  "name": "ekalashnikov-htmlacademy-israel-accelerator",
   "version": "1.0.0",
-  "description": "Стартовый шаблон сборки Лиги А",
+  "description": "ekalashnikov-htmlacademy-israel-accelerator",
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "1.x",
     "autoprefixer": "9.5.x",
