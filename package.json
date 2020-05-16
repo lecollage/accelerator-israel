@@ -2,27 +2,48 @@
   "name": "ekalashnikov-htmlacademy-israel-accelerator",
   "version": "1.0.0",
   "description": "ekalashnikov-htmlacademy-israel-accelerator",
+  "dependencies": {
+    "del": "^4.1.1"
+  },
   "devDependencies": {
-    "@htmlacademy/editorconfig-cli": "1.x",
-    "autoprefixer": "9.5.x",
-    "browser-sync": "2.26.x",
-    "gulp": "4.0.x",
+    "@babel/core": "^7.3.4",
+    "@babel/plugin-transform-runtime": "^7.3.4",
+    "@babel/polyfill": "^7.2.5",
+    "@babel/preset-env": "^7.3.4",
+    "babel-polyfill": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babelify": "^10.0.0",
+    "browserify": "^16.2.3",
+    "watchify": "^3.11.1",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-exit": "0.0.2",
+    "gulp-less": "^4.0.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sourcemaps": "^2.6.5",
     "gulp-csso": "^3.0.1",
     "gulp-imagemin": "^5.0.3",
-    "gulp-plumber": "1.2.x",
     "gulp-postcss": "8.0.x",
     "gulp-posthtml": "^3.0.4",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "4.0.x",
-    "gulp-sourcemaps": "2.6.x",
     "gulp-svgstore": "^7.0.1",
     "gulp-webp": "^4.0.1",
-    "pixel-glass": "^1.0.13",
-    "posthtml-include": "^1.2.0",
+    "gulp-uglify": "^3.0.2",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0",
     "stylelint": "9.10.x",
-    "stylelint-config-htmlacademy": "0.1.x",
     "eslint": "7.0.0",
-    "eslint-config-htmlacademy": "0.4.x"
+    "@htmlacademy/editorconfig-cli": "1.x",
+    "stylelint-config-htmlacademy": "0.1.x",
+    "eslint-config-htmlacademy": "0.4.x",
+    "autoprefixer": "9.5.x",
+    "browser-sync": "2.26.x",
+    "pixel-glass": "^1.0.13",
+    "posthtml-include": "^1.2.0"
   },
   "scripts": {
     "editorconfig": "editorconfig-cli",
@@ -49,7 +70,8 @@
   "engines": {
     "node": "8.15"
   },
-  "dependencies": {
-    "del": "^4.1.1"
-  }
+  "keywords": [
+    "gulp",
+    "babel"
+  ]
 }
