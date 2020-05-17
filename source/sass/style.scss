@@ -1,3 +1,106 @@
-h1 {
-  color: blue;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Fira Sans", "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 150%;
+  background-color: #ffffff;
+  min-width: 320px;
+  max-width: 1366px;
+  width: 100%;
+  color: #303030;
+  margin: 0 auto;
+  border: 1px solid green;
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  src: url("../fonts/FiraSans-Regular.ttf") format("ttf");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+@media (max-width: 1023px) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="text"],
+textarea {
+  appearance: none;
+  outline: 0;
+}
+
+.main-header {
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.main-header__background {
+  min-height: 906px;
+  background:
+    url("../img/main-header-background-girl.png") center 20px no-repeat,
+    url("../img/main-header-background-israel.png") center 30% no-repeat,
+    url("../img/main-header-background.png") center no-repeat;
+  background-size: 1366px 906px, 1018px 340px, 1366px 906px;
+  border: 1px solid black;
+}
+
+.main-header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 48px;
+  padding-left: 97px;
+  padding-right: 97px;
+  margin: 32px 0;
+  color: black;
+  border: 1px solid blue;
+}
+
+.main-header__phone {
+  text-decoration: none;
+}
+
+.main-header__callback {
+  text-decoration: none;
+  border-bottom: 1px black dashed;
+}
+
+.text-black {
+  color: black;
+}
+
+.placeholder-button {
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 17px;
+}
+
+.head-info__container {
+  min-height: 906px;
 }

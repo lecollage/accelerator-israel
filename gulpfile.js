@@ -50,12 +50,12 @@ const paths = {
     destMapFolder: './maps'
   },
   images: {
-    watchFiles: 'source/img/icon-*.svg',
-    source: 'source/img/**/*.{png,jpg,svg}',
-    destFolder: 'source/img',
+    watchFiles: 'source/img/*.{png,jpg,svg}',
+    source: 'source/img/*.{png,jpg,svg}',
+    destFolder: 'dist/img',
     webp: {
-      source: 'source/img/**/*.{png,jpg}',
-      dest: 'source/img'
+      source: 'source/img/*.{png,jpg}',
+      dest: 'dist/img'
     },
     sprite: {
       source: 'source/img/{icon-*,htmlacademy*}.svg',
@@ -65,7 +65,7 @@ const paths = {
   },
   copy: {
     source: [
-      'source/fonts/**/*.{woff,woff2}',
+      'source/fonts/**/*.{woff,woff2,ttf}',
       'source/img/**',
       'source//*.ico'
     ]
@@ -97,7 +97,7 @@ gulp.task('js', (done) => {
   done();
 });
 
-gulp.task('css', function () {
+gulp.task('css', () => {
   return gulp.src(paths.sass.source)
     .pipe(plumber())
     .pipe(sourcemap.init())
