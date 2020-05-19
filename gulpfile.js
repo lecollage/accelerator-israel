@@ -24,10 +24,10 @@ const posthtml = require('gulp-posthtml');
 const include = require('posthtml-include');
 const del = require('del');
 
+
+/*================= SETTINGS =================*/
+const destFolder = 'build';
 const paths = {
-  common: {
-    dist: 'dist'
-  },
   html: {
     watchFiles: 'source/*.html',
     source: [
@@ -46,21 +46,21 @@ const paths = {
     watchFiles: 'source/sass/**/*.{scss,sass}',
     source: 'source/sass/style.scss',
     renameTo: 'style.min.css',
-    dest: 'dist/css',
+    dest: `${destFolder}/css`,
     destMapFolder: './maps'
   },
   images: {
     watchFiles: 'source/img/*.{png,jpg,svg}',
     source: 'source/img/*.{png,jpg,svg}',
-    destFolder: 'dist/img',
+    destFolder: `${destFolder}/img`,
     webp: {
       source: 'source/img/*.{png,jpg}',
-      dest: 'dist/img'
+      dest: `${destFolder}/img`
     },
     sprite: {
       source: 'source/img/{icon-*,htmlacademy*}.svg',
       renameTo: 'sprite_auto.svg',
-      dest: 'dist/img'
+      dest: `${destFolder}/img`
     }
   },
   copy: {
@@ -75,13 +75,15 @@ const paths = {
     destMinJSFileName: 'bundle.min.js'
   }
 };
+/*==================================*/
 
+/*================= SUBTASKS =================*/
 gulp.task('html', () => {
   return gulp.src(paths.html.watchFiles)
     .pipe(posthtml([
       include()
     ]))
-    .pipe(gulp.dest(paths.common.dist));
+    .pipe(gulp.dest(destFolder));
 });
 
 gulp.task('js', (done) => {
@@ -93,7 +95,7 @@ gulp.task('js', (done) => {
     .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(uglify())
     .pipe(sourcemaps.write(paths.js.destMapFolder))
-    .pipe(gulp.dest(paths.common.dist));
+    .pipe(gulp.dest(destFolder));
   done();
 });
 
@@ -142,16 +144,16 @@ gulp.task('sprite', () => {
 gulp.task('copy', () => {
   return gulp.src(paths.copy.source, {
     base: 'source'
-  }).pipe(gulp.dest(paths.common.dist));
+  }).pipe(gulp.dest(destFolder));
 });
 
 gulp.task('clean', () => {
-  return del(paths.common.dist);
+  return del(destFolder);
 });
 
 gulp.task('server', () => {
   server.init({
-    server: 'dist/',
+    server: `${destFolder}/`,
     notify: false,
     open: true,
     cors: true,
@@ -163,6 +165,9 @@ gulp.task('server', () => {
   gulp.watch(paths.images.watchFiles, gulp.series('sprite', 'html', 'refresh'));
   gulp.watch(paths.html.watchFiles, gulp.series('html', 'refresh'));
 });
+/*==================================*/
 
+/*================= GENERAL TASKS =================*/
 gulp.task('build', gulp.series('clean', 'copy', 'css', 'sprite', 'html', 'js'));
 gulp.task('start', gulp.series('build', 'server'));
+/*==================================*/
