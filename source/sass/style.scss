@@ -2,7 +2,6 @@ body,
 html {
   margin: 0;
   padding: 0;
-  height: 100%;
 }
 
 html {
@@ -19,14 +18,13 @@ body {
   background-color: #ffffff;
   min-width: 320px;
   max-width: 1366px;
-  width: 100%;
   color: #303030;
   margin: 0 auto;
 }
 
 @font-face {
   font-family: "Fira Sans";
-  src: url("../fonts/FiraSans-Regular.ttf") format("ttf");
+  src: url("../fonts/FiraSans-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -68,38 +66,37 @@ textarea {
   background-size: 1366px 906px, 1018px 340px, 1366px 906px;
 }
 
-.main-header__container {
+.main-header__main-nav {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  height: 48px;
+  align-items: flex-end;
+  height: 48px + 35px;
   padding-left: 97px;
   padding-right: 97px;
-  margin: 32px 0;
   color: black;
 }
 
-.main-header__phone {
+.main-nav__phone {
   text-decoration: none;
 }
 
-.main-header__callback {
+.main-nav__callback {
   text-decoration: none;
   border-bottom: 1px black dashed;
 }
 
-.main-header__promo__container {
-  margin: 538px auto 0 auto;
+.main-header__promo {
+  margin: 560px - 83px auto 0 auto;
   text-align: center;
   width: 350px;
 }
 
-.main-header__tip-scroll-down__container {
+.main-header__tip-scroll-down {
   display: flex;
   justify-content: center;
 }
 
-.main-header__tip-scroll-down {
+.tip-scroll-down__img {
   margin: 0 auto;
 }
 
@@ -167,7 +164,7 @@ textarea {
   line-height: 150%;
 }
 
-.main-footer__media-buttons__container {
+.main-footer__social-buttons {
   display: flex;
   justify-content: space-between;
   align-items: center;

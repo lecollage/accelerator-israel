@@ -35,10 +35,10 @@ const paths = {
     ]
   },
   js: {
-    watchFiles: 'source/js/script.js',
+    watchFiles: 'source/js/main.js',
     source: [
       'node_modules/@babel/polyfill/dist/polyfill.min.js',
-      'source/js/script.js'
+      'source/js/main.js'
     ],
     destMapFolder: './maps'
   },
@@ -71,8 +71,7 @@ const paths = {
     ]
   },
   build: {
-    destMinCSSFileName: 'bundle.min.css',
-    destMinJSFileName: 'bundle.min.js'
+    destMinJSFileName: 'main.min.js'
   }
 };
 /*==================================*/
