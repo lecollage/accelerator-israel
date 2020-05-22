@@ -1,3 +1,22 @@
+$color-black: #484848;
+$color-white: #ffffff;
+
+$size-s: 320px;
+$size-xs: 510px;
+$size-m: 768px;
+$size-l: 1024px;
+
+$font-size-h1: 200px;
+$font-size-h1-m: 72px;
+$font-size-h2: 40px;
+$font-size-h2-m: 32px;
+$font-size-h3: 28px;
+$font-size-h3-m: 24px;
+$font-size-h4: 21px;
+$font-size-h4-m: 18px;
+$font-size-regular-m: 17px;
+$font-size-regular-s: 14px;
+
 body,
 html {
   margin: 0;
@@ -15,7 +34,7 @@ body {
   font-style: normal;
   font-size: 18px;
   line-height: 150%;
-  background-color: #ffffff;
+  background-color: $color-white;
   min-width: 320px;
   max-width: 1366px;
   color: #303030;
@@ -36,7 +55,7 @@ body {
   box-sizing: inherit;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: $size-l) {
   html {
     scroll-behavior: auto;
   }
@@ -59,9 +78,8 @@ textarea {
 
 .main-header__background {
   min-height: 906px;
-  background:
-    url("../img/main-header-background-girl.png") center 20px no-repeat,
-    url("../img/main-header-background-israel.png") center 30% no-repeat,
+  background: url("../img/main-header-background-girl.png") center center no-repeat,
+    url("../img/main-header-background-israel.png") center center no-repeat,
     url("../img/main-header-background.png") center no-repeat;
   background-size: 1366px 906px, 1018px 340px, 1366px 906px;
 }
@@ -70,9 +88,10 @@ textarea {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  height: 48px + 35px;
   padding-left: 97px;
   padding-right: 97px;
+  width: 100%;
+  height: 48px + 35px;
   color: black;
 }
 
@@ -89,15 +108,87 @@ textarea {
   margin: 560px - 83px auto 0 auto;
   text-align: center;
   width: 350px;
+  font-size: $font-size-h3-m;
+}
+
+@media (max-width: 950px) {
+  .main-header__background {
+    min-height: auto;
+    background-size: 1366px 906px, 900px 300px, 1366px 906px;
+  }
+
+  .main-header__main-nav {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: $size-m) {
+  .main-header__background {
+    min-height: auto;
+    background: url("../img/main-header-background-girl.png") center center no-repeat,
+      url("../img/main-header-background-israel.png") center 30% no-repeat,
+      url("../img/main-header-background.png") center no-repeat;
+    background-size: 1366px 906px, 700px 233px, 1366px 906px;
+  }
+
+  .main-header__main-nav {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: $size-xs) {
+  .main-header__background {
+    min-height: auto;
+    background-size: 1100px 733px, 510px 170px, 1366px 906px;
+  }
+
+  .main-header__main-nav {
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 0;
+    padding-right: 10px;
+  }
+
+  .main-header__main-nav a:nth-child(2) {
+    position: absolute;
+    left: 20px;
+  }
+
+  .main-header__main-nav > a {
+    font-size: $font-size-regular-s;
+  }
+}
+
+@media (max-width: $size-s) {
+  .main-header__promo {
+    margin: 250px auto 0;
+  }
+
+  .main-header__background {
+    min-height: 650px;
+    background-size: 1000px 666px, 340px 113px, 912px 587px;
+  }
+}
+
+@media (max-width: $size-m) {
+  .main-header__promo {
+    font-size: $font-size-h4;
+    width: auto;
+  }
 }
 
 .main-header__tip-scroll-down {
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
 .tip-scroll-down__img {
   margin: 0 auto;
+  width: 76px;
+  height: 131px;
 }
 
 .text-black {
@@ -105,19 +196,15 @@ textarea {
 }
 
 .text-gray {
-  color: #484848;
+  color: $color-black;
 }
 
 .text-white {
-  color: #ffffff;
+  color: $color-white;
 }
 
 .font-bold {
   font-weight: bold;
-}
-
-.font-size-promo {
-  font-size: 24px;
 }
 
 .opacity-medium {
@@ -149,6 +236,21 @@ textarea {
   align-items: center;
   height: 74px;
 }
+
+@media (max-width: $size-m) {
+  .main-footer__container {
+    margin: 0;
+  }
+}
+
+@media (max-width: $size-xs) {
+  .main-footer__container {
+    height: auto;
+    margin: 10px 0;
+    flex-direction: column;
+  }
+}
+
 
 .main-footer__logo {
   width: 85px;
