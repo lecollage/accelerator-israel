@@ -2,14 +2,13 @@ const gulp = require('gulp');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
 const cleanCSS = require('gulp-clean-css');
-// const concat = require('gulp-concat');
+const concat = require('gulp-concat');
 
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
 const browserify = require('browserify');
 const babel = require('babelify');
 
-const plumber = require('gulp-plumber');
 const sourcemap = require('gulp-sourcemaps');
 const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
@@ -44,7 +43,10 @@ const paths = {
   },
   sass: {
     watchFiles: 'source/sass/**/*.{scss,sass}',
-    source: 'source/sass/style.scss',
+    source: [
+      'source/sass/header.scss',
+      'source/sass/footer.scss'
+    ],
     renameTo: 'style.min.css',
     dest: `${destFolder}/css`,
     destMapFolder: './maps'
@@ -71,7 +73,8 @@ const paths = {
     ]
   },
   build: {
-    destMinJSFileName: 'main.min.js'
+    destMinJSFileName: 'main.min.js',
+    destMinCSSFileName: 'style.min.css'
   }
 };
 /*==================================*/
@@ -100,13 +103,13 @@ gulp.task('js', (done) => {
 
 gulp.task('css', () => {
   return gulp.src(paths.sass.source)
-    .pipe(plumber())
+    .pipe(buffer())
     .pipe(sourcemap.init())
     .pipe(sass())
     .pipe(postcss([autoprefixer()]))
     .pipe(cleanCSS({ debug: true }))
     .pipe(csso())
-    .pipe(rename(paths.sass.renameTo))
+    .pipe(concat(paths.build.destMinCSSFileName))
     .pipe(sourcemaps.write(paths.sass.destMapFolder))
     .pipe(gulp.dest(paths.sass.dest))
     .pipe(server.stream());
