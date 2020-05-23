@@ -17,6 +17,20 @@ $font-size-h4-m: 18px;
 $font-size-regular-m: 17px;
 $font-size-regular-s: 14px;
 
+@font-face {
+  font-family: "Fira Sans";
+  src: local("Fira Sans Regular"), local("FiraSans-Regular"), url("../fonts/Firasansregular.woff2") format("woff2"), url("../fonts/Firasansregular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  src: local("Fira Sans Bold"), local("FiraSans-Bold"), url("../fonts/Firasansbold.woff2") format("woff2"), url("../fonts/Firasansbold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
 body,
 html {
   margin: 0;
@@ -85,6 +99,10 @@ textarea {
   color: black;
 }
 
+.main-nav__logo {
+  position: relative;
+}
+
 .main-nav__phone {
   text-decoration: none;
 }
@@ -141,7 +159,7 @@ textarea {
     padding-right: 10px;
   }
 
-  .main-header__main-nav a:nth-child(2) {
+  .main-nav__logo {
     position: absolute;
     left: 20px;
   }
