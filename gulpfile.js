@@ -44,7 +44,9 @@ const paths = {
   sass: {
     watchFiles: 'source/sass/**/*.{scss,sass}',
     source: [
+      'source/sass/common.scss',
       'source/sass/header.scss',
+      'source/sass/about-program.scss',
       'source/sass/footer.scss'
     ],
     renameTo: 'style.min.css',

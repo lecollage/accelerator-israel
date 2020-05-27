@@ -1,0 +1,57 @@
+@import "common";
+
+.about-program {
+  width: 100%;
+}
+
+.about-program__header {
+  font-family: "Montserrat", "Roboto", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0 auto 30px auto;
+  color: #1fc0fc;
+}
+
+.about-program__text {
+  margin: 0 auto;
+  text-align: center;
+  font-size: $font-size-regular-m;
+  max-width: 720px;
+}
+
+.about-program__video-container {
+  position: relative;
+  background: url("../img/about-program-watercolor-background.png") center center no-repeat;
+  background-size: 1366px 604px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.about-program__bg-img {
+  position: absolute;
+  padding-top: 48px;
+  width: 100%;
+  max-width: 1366px;
+  flex: 1;
+  object-fit: contain;
+}
+
+.about-program__video-img {
+  padding-top: 50px;
+  padding-bottom: 48px;
+  width: 100%;
+  max-width: 870px;
+}
+
+.about-program__video-play-button {
+  position: absolute;
+}
+
+@media (max-width: $size-m) {
+  .about-program__text {
+    padding: 0 10px;
+    text-align: left;
+  }
+}
